@@ -1,0 +1,11 @@
+.root {
+    -fx-font-smoothing-type: gray;
+    -fx-font-weight: 500;
+    -fx-base: rgb(242, 242, 242);
+    -fx-background: rgb(255, 255, 255);
+}
+
+.split-pane > .split-pane-divider {  
+    -fx-padding: 0 0.05em 0 0.05em; 
+    -fx-background: rgb(222, 222, 222); 
+} 

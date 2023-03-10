@@ -1,0 +1,26 @@
+.CustomEditorTabPane .tab-pane {
+    -fx-tab-min-width: 90px;
+}
+
+.CustomEditorTabPane .tab {
+    -fx-background-color: #B2B2B2;
+    -fx-color: white;
+    -fx-background-insets: 0 0 1px 0;
+    -fx-background-radius: 0;
+    -fx-padding: 4px 12px 4px 12px;
+}
+
+.CustomEditorTabPane .tab {
+    -fx-margin-right: 20px;
+}
+
+
+.CustomEditorTabPane .tab .focus-indicator {
+    -fx-border-color: none;
+    -fx-cursor: pointer;
+}
+
+.CustomEditorTabPane .tab:selected {
+    -fx-effect: innershadow(gaussian, rgba(48, 175, 229, 0.68), 1, 0, 0, 2);
+    -fx-background-color: #FFFFFF;
+}

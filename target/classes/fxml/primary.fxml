@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="1005.0"
+   xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="com.afropolymath.react.editor.PrimaryController">
+   <children>
+      <MenuBar VBox.vgrow="NEVER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="menuOpenButton" mnemonicParsing="false"
+                     onAction="#openFolderInCurrentWorkspace" text="Open Folder" />
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" VBox.vgrow="NEVER">
+         <items>
+            <ChoiceBox prefWidth="150.0" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" text="Button" />
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+            <Button mnemonicParsing="false" text="Deploy">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true"
+                     preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/rocket_launch.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Preview">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true"
+                     preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" text="Test">
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true"
+                     preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/labs.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="0.0" />
+         </items>
+      </ToolBar>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.26, 0.8" prefHeight="429.0" prefWidth="442.0"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <TreeView fx:id="workspaceTreeView" prefHeight="200.0" prefWidth="200.0"
+                     SplitPane.resizableWithParent="false" />
+                  <TabPane fx:id="mainTabArea" prefHeight="200.0" prefWidth="200.0"
+                     styleClass="CustomEditorTabPane" stylesheets="@../css/custom-tabs.css"
+                     tabClosingPolicy="ALL_TABS" />
+                  <TabPane fx:id="terminalTabPane" prefHeight="113.0" prefWidth="200.0"
+                     side="RIGHT">
+                     <tabs>
+                        <Tab text="DevDocs">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                 prefWidth="200.0">
+                                 <children>
+                                    <WebView prefHeight="200.0" prefWidth="200.0"
+                                       fx:id="devDocsWebView"
+                                       AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                       AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+      <HBox prefHeight="30.0" prefWidth="200.0">
+         <children>
+            <ToolBar prefHeight="30.0" prefWidth="443.0">
+               <items>
+                  <Button mnemonicParsing="false" text="Button" />
+               </items>
+            </ToolBar>
+            <ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="701.0"
+               HBox.hgrow="ALWAYS">
+               <items>
+                  <Button mnemonicParsing="false"
+                     style="-fx-border-width: 0; -fx-background-color: transparent;" text="Button" />
+                  <ComboBox fx:id="fontSizeSelector" nodeOrientation="LEFT_TO_RIGHT"
+                     prefHeight="25.0" prefWidth="110.0" promptText="Font Size"
+                     style="-fx-background-color: none;" />
+               </items>
+            </ToolBar>
+         </children>
+      </HBox>
+   </children>
+</VBox>

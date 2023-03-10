@@ -1,0 +1,22 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.editor-container {
+    position: relative;
+    height: 100%;
+}
+
+.editor-container::before {
+    content: '';
+    height: 60px;
+    z-index: 9;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+}
